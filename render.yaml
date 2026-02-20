@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: django-todo-app
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn todo_project.wsgi:application"
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.6
+      - key: DJANGO_SETTINGS_MODULE
+        value: todo_project.settings_production
+      - key: SECRET_KEY
+        generateValue: true

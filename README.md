@@ -135,7 +135,38 @@ python manage.py test
 
 2. **Static Files**: This project uses Tailwind CSS via CDN, so no static file collection is needed for development.
 
-## License
+## 🚀 Live Demo
+
+**Deployed on Render:** https://ostad-django-todo-app-10.onrender.com
+
+⚠️ **Note:** Free tier spins down after 15 mins inactivity. First request may take 30 seconds to wake up.
+
+## 🌐 Deployment (Render)
+
+### Configuration Files
+
+   - `render.yaml` - Render Blueprint configuration
+   - `build.sh` - Build script for migrations and static files`
+   - `Procfile` - Process configuration (compatible with Heroku/Railway)
+   - `runtime.txt` - Python version specification
+   - `todo_project/settings_production.py` - Production settings
+
+### Deploy Steps
+  - Fork and push this repo to GitHub
+  - Connect Render to your GitHub account
+  - Create new Web Service from dashboard
+  - Select this repository
+  - Use build command: `./build.sh`
+  - Use start command: `gunicorn todo_project.wsgi:application`
+  - Select Free tier
+> Auto-deploys on every push to main.
+
+### Tech Stack
+  - Backend: Django + Python 3.11
+  - Frontend: Tailwind CSS (CDN)
+  - Database: SQLite (Render free tier)
+  - Deployment: Render (Free tier)
+
+## 📄 License
 
 This project is open source and available for educational purposes.
-
